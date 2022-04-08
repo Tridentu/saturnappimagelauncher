@@ -4,6 +4,7 @@ project(plasma-saturnappimagelauncher)
  
 find_package(ECM 1.4.0 REQUIRED NO_MODULE)
 set(CMAKE_MODULE_PATH ${ECM_MODULE_PATH})
+set(CMAKE_CXX_STANDARD 17)
 
 include(KDEInstallDirs)
 include(KDECMakeSettings)
@@ -12,7 +13,13 @@ include(FeatureSummary)
 
 find_package(KF5 REQUIRED COMPONENTS
     Plasma
+    Config
     I18n
+    KIO
+    Service
+    Notifications
+    Activities
+    WindowSystem
 )
 
 find_package(Qt5 CONFIG REQUIRED COMPONENTS
